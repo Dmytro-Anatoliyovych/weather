@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+@font-face {
+    src: url(/fonts/Rolasand/Rolasand.ttf);
+    font-family: Rolasand;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input {
+    outline: none;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #43affc;
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+
+}
+
+::selection {
+    color: #fff;
+    background: #43affc;
+}
+
+.wrapper {
+    width: 250px;
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
+
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    header {
+        display: flex;
+        justify-content: center;
+        font-size: 21px;
+        font-weight: 500;
+        color: #bee5eb;
+        margin-top: 10px;
+        padding: 16px 15px;
+        align-items: center;
+        font-family: Rolasand;
+
+        i {
+            font-size: 0em;
+            cursor: pointer;
+            margin-right: 8px;
+        }
+    }
+
+    &.active {
+        header {
+            i {
+                margin-left: 5px;
+                font-size: 30px;
+            }
+        }
+    }
+
+    .inputPart {
+        margin: 0px 20px 20px;
+    }
+
+    &.active {
+        .inputPart {
+            display: none;
+        }
+    }
+
+    .inputPart {
+        .infoTxt {
+            display: none;
+            font-size: 17px;
+            text-align: center;
+            padding: 12px 10px;
+            border-radius: 7px;
+            margin-bottom: 15px;
+
+            &.error {
+                color: #721c24;
+                display: block;
+                background: #f8d7da;
+                border: 1px solid #f5c6cb;
+            }
+
+            &.pending {
+                color: #0c5460;
+                display: block;
+                background: #d1ecf1;
+                border: 1px solid #bee5eb;
+            }
+        }
+
+        &:where(input, button) {
+            width: 100%;
+            height: 55px;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            border-radius: 7px;
+        }
+
+        input {
+            width: 100%;
+            text-align: center;
+            padding: 5px 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+
+            &::placeholder {
+                color: #bfbfbf;
+            }
+        }
+
+        .separator {
+            height: 1px;
+            width: 100%;
+            margin: 25px 0;
+            background: #ccc;
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &::before {
+                content: "";
+                color: #b3b3b3;
+                font-size: 19px;
+                background: #fff;
+            }
+        }
+
+        button {
+            width: 100%;
+            color: #bee5eb;
+            cursor: pointer;
+            transition: 0.3s ease;
+            border: none;
+            border-radius: 3px;
+            padding: 5px 0;
+
+            box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+
+
+            &:hover {
+                color: #004d7a;
+                background: #63c5ea;
+            }
+
+            &:active {
+                filter: brightness(80%);
+            }
+        }
+    }
+
+
+    .weatherPart {
+        display: none;
+        margin: 30px 0 0;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        img {
+            max-width: 125px;
+        }
+
+        .temp {
+            display: flex;
+            font-weight: 500;
+            font-size: 72px;
+
+            .numb {
+                font-weight: 600;
+            }
+
+            .deg {
+                font-size: 40px;
+                display: block;
+                margin: 10px 5px 0 0;
+            }
+        }
+
+        .weather {
+            font-size: 21px;
+            text-align: center;
+            margin: -5px 20px 15px;
+        }
+
+        .location {
+            display: flex;
+            font-size: 19px;
+            padding: 0 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            align-items: flex-start;
+
+            i {
+                font-size: 22px;
+                margin: 4px 5px 0 0;
+            }
+        }
+
+        .wbottomDetails {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            border-top: 1px solid #ccc;
+
+            .column {
+                display: flex;
+                width: 100%;
+                padding: 15px 0;
+                align-items: center;
+                justify-content: center;
+
+                i {
+                    color: #5DBBFF;
+                    font-size: 40px;
+                }
+
+                .humidity {
+                    border-left: 1px solid #ccc;
+
+                    span {
+                        font-size: 18px;
+                        font-weight: 500;
+                        margin-top: -3px;
+                    }
+
+                    i {
+                        font-size: 37px;
+                    }
+                }
+
+                .details {
+                    margin-left: 3px;
+
+                    .temp {
+                        font-size: 18px;
+                        font-weight: 500;
+                        margin-top: -3px;
+
+                        .deg {
+                            margin: 0;
+                            font-size: 17px;
+                            padding: 0 2px 0 1px;
+                        }
+                    }
+
+                    p {
+                        font-size: 14px;
+                        margin-top: -6px;
+                    }
+                }
+            }
+        }
+    }
+
+    &.active {
+        .weatherPart {
+            display: flex;
+        }
+    }
+}
+
+
+@media (max-width:320px) {
+
+    .wrapper {
+        width: 100vw;
+        height: 100vh;
+        background: #fff;
+        border-radius: 0px;
+
+        box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+}
