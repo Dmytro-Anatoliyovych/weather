@@ -35,8 +35,8 @@ locationBtn.addEventListener("click", () =>
 
 function requestApi (city)
 {
-    api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${"f1b841616ab7a1fc9f148fa2e41553a7"}`;
 
+    api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${"f1b841616ab7a1fc9f148fa2e41553a7"}`;
 
     fetchData();
 }
